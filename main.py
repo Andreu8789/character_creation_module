@@ -1,5 +1,6 @@
 from random import randint
 
+
 def attack(char_name, char_class):
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, равный '
@@ -10,6 +11,9 @@ def attack(char_name, char_class):
     if char_class == 'healer':
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(-3, -1)}')
+    else:
+        return (f'{char_name} не нанёс противнику урон')
+
 
 def defence(char_name, char_class):
     if char_class == 'warrior':
@@ -18,6 +22,9 @@ def defence(char_name, char_class):
         return (f'{char_name} блокировал {10 + randint(-2, 2)} ед. урона')
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} ед. урона')
+    else:
+        return (f'{char_name} не блокировал урон')
+
 
 def special(char_name, char_class):
     if char_class == 'warrior':
@@ -27,6 +34,9 @@ def special(char_name, char_class):
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
+    else:
+        return (f'{char_name} не применил специальное умение')
+
 
 def start_training(char_name, char_class):
     if char_class == 'warrior':
@@ -51,6 +61,7 @@ def start_training(char_name, char_class):
             print(special(char_name, char_class))
     return 'Тренировка окончена.'
 
+
 def choice_char_class():
     approve_choice = None
     char_class = None
@@ -71,6 +82,7 @@ def choice_char_class():
                                'или любую другую кнопку, '
                                'чтобы выбрать другого персонажа ').lower()
     return char_class
+
 
 def main():
     print('Приветствую тебя, искатель приключений!')
